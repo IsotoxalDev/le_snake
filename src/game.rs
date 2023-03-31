@@ -12,12 +12,14 @@ pub fn handle_motion(
     direction: ReadSignal<Vec<Direction>>,
     set_direction: WriteSignal<Vec<Direction>>,
 ) {
-    let direction = direction();
-    let towards = direction.first().unwrap();
-    if direction.len() > 1 {
+    let mut input_buffer = direction();
+    let mut towards = input_buffer.first().unwrap();
+    if input_buffer.len() > 1 {
         set_direction.update(|d| {
             d.remove(0);
-        })
+        });
+        input_buffer = direction();
+        towards = input_buffer.first().unwrap();
     }
     let mut curr = head();
     let mut prev: Option<(usize, usize)> = None;
