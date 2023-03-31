@@ -1,0 +1,76 @@
+body {
+  background: #151515;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #f6ffd5;
+}
+
+#Snake {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.row{
+  display: flex;
+  gap: 5px;
+}
+
+.cell {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  background: #252525;
+}
+
+.snake {
+  background: #c5d86d;
+}
+
+.apple {
+  background: #ff8080;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+.overlay_child {
+  height: 20rem;
+  width: 20rem;
+  background: #323232;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.overlay_child button {
+  width: 100%;
+  border-radius: 0.4rem;
+  border: none;
+  outline:none;
+  background: #c5d86d;
+  font-size: 1.2rem;
+}
+
+.overlay_child button:hover {
+  background: #c5d86dbb;
+}
